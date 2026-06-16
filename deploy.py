@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-import joblib
 import pandas as pd
+import joblib
 
 app = FastAPI()
 
@@ -11,8 +11,15 @@ def predict(transaction: dict):
 
     df = pd.DataFrame([transaction])
 
-    prediction = int(model.predict(df)[0])
+    fraud_probability = float(
+        model.predict_proba(df)[0][1]
+    )
+
+    prediction = int(
+        model.predict(df)[0]
+    )
 
     return {
-        "fraud_prediction": prediction
+        "fraud_prediction": prediction,
+        "fraud_probability": round(fraud_probability, 3)
     }
