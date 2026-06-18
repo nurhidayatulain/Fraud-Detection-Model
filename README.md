@@ -50,6 +50,7 @@ Real-time scoring through REST API
 
 ## Drift Monitoring
 Data Drift --> input data changes compared to what the model was trained on
+
 Model/Concept drift --> occurs when the underlying relationship between features and the target variable changes over time
 
 - Average transaction amount changes significantly
