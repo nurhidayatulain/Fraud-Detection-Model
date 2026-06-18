@@ -42,7 +42,7 @@ Ensures model remains effective after deployment
 - Precision
 - Recall
 - F1 Score
-- ROC-AUC
+- ROC-AUC : how well a binary classification model can distinguish between two classes
 
 ## Deployment
 
